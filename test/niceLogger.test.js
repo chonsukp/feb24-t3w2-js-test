@@ -17,20 +17,33 @@ describe("niceLogger function tests", () => {
 
 describe("messageRepeater repeats words correctly", () => {
 
-    test.skip("messageRepeater repeats words correctly", () => {
+    test("messageRepeater repeats words correctly", () => {
+        let repeatedMessage = messageRepeater("hello");
+
+        expect(repeatedMessage).toEqual("hellohellohello");
+        expect(repeatedMessage).toHaveLength(15);
         
     });
 
-    test.skip("messageRepeater repeats numbers correctly", () => {
+    test("messageRepeater repeats numbers correctly", () => {
+        let repeatedMessage = messageRepeater(1);
 
+        expect(repeatedMessage).toStrictEqual("111");
+        expect(repeatedMessage).toHaveLength(3);
     });
 
-    test.skip("messageRepeater repeats array correctly", () => {
-
+    test("messageRepeater repeats array correctly", () => {
+        let repeatedMessage = messageRepeater(["hello", "world"]);
+        console.log(repeatedMessage);
+        expect(repeatedMessage).toEqual(["hello", "world", "hello", "world", "hello", "world"]);
+        expect(repeatedMessage).toHaveLength(6);
     });
 
-    test.skip("messageRepeater repeats null or whitespace correctly", () => {
+    test("messageRepeater repeats null or whitespace correctly", () => {
+        let repeatedMessage = messageRepeater("");
 
+        expect(repeatedMessage).toStrictEqual("");
+        expect(repeatedMessage).toHaveLength(0);
     });
 
 });
