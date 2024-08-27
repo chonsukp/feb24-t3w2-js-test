@@ -1,5 +1,7 @@
+const {niceLogger} = require("../src/niceLogger");
+
 
 test("niceLogger returns Hello World!", () => {
 
-    expect(true).toBe(true);
+    expect(niceLogger()).toBe("Hello World!");
 });
